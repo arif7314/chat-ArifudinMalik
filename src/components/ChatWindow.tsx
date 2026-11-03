@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
@@ -26,14 +27,13 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
       {messages.length === 0 ? (
         <div className="flex items-center justify-center h-full">
           <div className="text-center">
-            <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-robot text-3xl text-blue-600 dark:text-blue-400"></i>
+            <div className="w-20 h-20 rounded-3xl overflow-hidden shadow-lg shadow-red-900/15 mx-auto mb-4">
+              <Image src="/mascot.svg" alt="" width={80} height={80} className="w-full h-full" />
             </div>
-            <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Selamat datang!</h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-sm">
-              Halloo.. Saya adalah Sontoloyo AI<br>
-              </br>
-              Anda bisa bertanya tentang apapun terkait informasi yang ada di dalam konten blog saya!
+            <h2 className="text-xl font-semibold mb-2 text-stone-900 dark:text-rose-50">Halo, selamat datang!</h2>
+            <p className="text-stone-600 dark:text-rose-100/70 max-w-sm">
+              Saya Arif AI Asisten, teman pintar untuk membantu menjawab pertanyaan dan menemukan ide baru.
+              {' '}Silakan tanyakan apa saja tentang informasi yang tersedia di blog.
             </p>
           </div>
         </div>
@@ -46,8 +46,8 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
           >
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0 ${message.role === 'user'
-                ? 'bg-slate-700 dark:bg-slate-600'
-                : 'bg-blue-600 dark:bg-blue-700'
+                ? 'bg-stone-700 dark:bg-stone-600'
+                : 'bg-gradient-to-br from-red-500 to-rose-700'
                 }`}
             >
               <i
@@ -57,8 +57,8 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
             </div>
             <div
               className={`max-w-[80%] px-4 py-3 rounded-2xl ${message.role === 'user'
-                ? 'bg-blue-600 text-white rounded-tr-none'
-                : 'bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 rounded-tl-none border border-gray-200 dark:border-slate-700'
+                ? 'bg-gradient-to-br from-red-600 to-rose-700 text-white rounded-tr-none shadow-sm shadow-red-900/15'
+                : 'bg-white dark:bg-[#211a1f] text-stone-900 dark:text-rose-50 rounded-tl-none border border-rose-100 dark:border-rose-950/70 shadow-sm shadow-rose-950/5'
                 }`}
             >
               <div className="text-sm leading-relaxed whitespace-pre-wrap break-words">
@@ -82,7 +82,7 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
                       ),
                       li: ({ node, ...props }) => <li className="ml-1 leading-snug [&>p]:mb-0 [&>p]:inline" {...props} />,
                       strong: ({ node, ...props }) => (
-                        <strong className="font-bold text-gray-900 dark:text-gray-100" {...props} />
+                        <strong className="font-bold text-stone-900 dark:text-rose-50" {...props} />
                       ),
                       p: ({ node, ...props }) => <p className="mb-2 last:mb-0 leading-snug" {...props} />,
                     }}
@@ -99,8 +99,8 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
               </div>
               <p
                 className={`text-xs mt-2 ${message.role === 'user'
-                  ? 'text-blue-100'
-                  : 'text-gray-500 dark:text-gray-400'
+                  ? 'text-rose-100'
+                  : 'text-stone-500 dark:text-rose-100/50'
                   }`}
               >
                 {new Date(message.timestamp).toLocaleTimeString('id-ID', {

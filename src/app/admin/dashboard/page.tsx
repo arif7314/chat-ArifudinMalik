@@ -104,12 +104,12 @@ export default function AdminDashboard() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-1.5 rounded-lg">
+            <div className="bg-gradient-to-br from-red-500 to-rose-700 p-1.5 rounded-lg">
               <i className="fas fa-robot text-white text-sm" />
             </div>
             <div>
-              <span className="font-bold text-white text-sm">Sontoloyo AI</span>
-              <span className="text-xs text-blue-400 ml-2">Admin Dashboard</span>
+              <span className="font-bold text-white text-sm">Arif AI Asisten</span>
+              <span className="text-xs text-rose-300 ml-2">Admin Dashboard</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -145,9 +145,9 @@ export default function AdminDashboard() {
               {pagination ? `${pagination.page}/${pagination.totalPages}` : '—'}
             </p>
           </div>
-          <div className="col-span-2 md:col-span-1 bg-blue-900/30 border border-blue-700/30 rounded-xl p-4">
-            <p className="text-xs text-blue-300 mb-1">Status</p>
-            <p className="text-sm font-semibold text-blue-200 flex items-center gap-2">
+          <div className="col-span-2 md:col-span-1 bg-emerald-900/20 border border-emerald-700/30 rounded-xl p-4">
+            <p className="text-xs text-emerald-300 mb-1">Status</p>
+            <p className="text-sm font-semibold text-emerald-200 flex items-center gap-2">
               <i className="fas fa-circle text-emerald-400 text-xs" />
               Database Terhubung
             </p>
@@ -163,12 +163,12 @@ export default function AdminDashboard() {
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
               placeholder="Cari pesan pengguna atau AI..."
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg pl-9 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              className="w-full bg-slate-800 border border-slate-700 rounded-lg pl-9 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500"
             />
           </div>
           <button
             type="submit"
-            className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm rounded-lg transition-colors"
+            className="px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white text-sm rounded-lg transition-colors"
           >
             Cari
           </button>
@@ -188,7 +188,7 @@ export default function AdminDashboard() {
           {loading ? (
             <div className="flex items-center justify-center h-48">
               <div className="text-center">
-                <i className="fas fa-spinner animate-spin text-2xl text-blue-400 mb-3" />
+                <i className="fas fa-spinner animate-spin text-2xl text-rose-400 mb-3" />
                 <p className="text-slate-400 text-sm">Memuat data...</p>
               </div>
             </div>
@@ -231,7 +231,7 @@ export default function AdminDashboard() {
                         </p>
                       </td>
                       <td className="px-4 py-3 hidden lg:table-cell">
-                        <span className="bg-blue-900/40 text-blue-300 text-xs px-2 py-0.5 rounded-full">
+                        <span className="bg-rose-900/40 text-rose-300 text-xs px-2 py-0.5 rounded-full">
                           {record.total_tokens} tok
                         </span>
                       </td>
@@ -313,9 +313,9 @@ export default function AdminDashboard() {
                   <p className="text-xs text-slate-400">Respons</p>
                   <p className="text-lg font-bold text-white">{selectedRecord.completion_tokens}</p>
                 </div>
-                <div className="flex-1 bg-blue-900/40 rounded-lg p-3 text-center">
-                  <p className="text-xs text-blue-300">Total Tokens</p>
-                  <p className="text-lg font-bold text-blue-200">{selectedRecord.total_tokens}</p>
+                <div className="flex-1 bg-rose-900/40 rounded-lg p-3 text-center">
+                  <p className="text-xs text-rose-300">Total Tokens</p>
+                  <p className="text-lg font-bold text-rose-200">{selectedRecord.total_tokens}</p>
                 </div>
               </div>
 
@@ -337,12 +337,12 @@ export default function AdminDashboard() {
               {/* Assistant message */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 bg-blue-700 rounded-full flex items-center justify-center">
+                  <div className="w-6 h-6 bg-red-700 rounded-full flex items-center justify-center">
                     <i className="fas fa-robot text-xs text-white" />
                   </div>
-                  <span className="text-xs font-medium text-blue-300">Sontoloyo AI</span>
+                  <span className="text-xs font-medium text-rose-300">Arif AI Asisten</span>
                 </div>
-                <div className="bg-blue-950/40 border border-blue-900/30 rounded-xl p-4">
+                <div className="bg-rose-950/40 border border-rose-900/30 rounded-xl p-4">
                   <p className="text-sm text-slate-200 leading-relaxed whitespace-pre-wrap">
                     {selectedRecord.assistant_message}
                   </p>

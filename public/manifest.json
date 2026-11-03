@@ -1,13 +1,13 @@
 {
-  "name": "Sontoloyo AI",
-  "short_name": "Sontoloyo AI",
-  "description": "Sontoloyo AI - AI Chatbot untuk blog adi-muhamad.my.id",
+  "name": "Arif AI Asisten",
+  "short_name": "Arif AI",
+  "description": "Asisten AI pribadi Arif untuk membantu menjawab pertanyaan Anda.",
   "display": "standalone",
   "start_url": "/",
   "scope": "/",
   "orientation": "portrait",
-  "theme_color": "#2563eb",
-  "background_color": "#0f172a",
+  "theme_color": "#dc2626",
+  "background_color": "#fffafa",
   "categories": ["productivity", "utilities"],
   "icons": [
     {
